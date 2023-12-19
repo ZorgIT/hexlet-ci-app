@@ -5,12 +5,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      -uses: actions/checkout@v3
-      -name: setupCI
-      run: make setup
-      -name: lintCI
-      run: make lint
-      -name: testCI
-      run: make test
-      -name: Start
-      run: make start
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - run: make setup
+      - run: make lint
+      - run: make test
