@@ -1,0 +1,20 @@
+# file: .github/workflows/main.yml
+name: hwci
+on: push
+jobs:
+  build:
+  runs-on: ubuntu-latest
+  steps:
+    -uses: actions/checkout@v3
+    
+    -name: setupCI
+    run: make setup
+    
+    -name: lintCI
+    run: make lint
+    
+    -name: testCI
+    run: make test
+    
+    -name: Start
+    run: make start
